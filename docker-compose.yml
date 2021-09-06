@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+  MySQL:
+    image: mysql
+    container_name: MySQL
+    env_file: ./MySQL/mysql.env
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - 3306:3306
+    restart: always
+    volumes: 
+      - datastore:/var/lib/mysql
+      - ./MySQL/database:/docker-entrypoint-initdb.d
+    
+volumes: 
+  datastore:
+    driver: local
