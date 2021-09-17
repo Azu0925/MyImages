@@ -1,5 +1,5 @@
 up_mysql:
-	docker-compose up -d MySQL
+	docker-compose up -d MySQL phpmyadmin
 
 stop:
 	docker-compose stop
